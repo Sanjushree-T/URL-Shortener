@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Shortened URLs</title>
+</head>
+<body>
+    <h1>All URLs</h1>
+    <table border="1">
+        <tr>
+            <th>Original URL</th>
+            <th>Short URL</th>
+        </tr>
+        {% for url in vals %}
+        <tr>
+            <td>{{ url.long }}</td>
+            <td><a href="/{{ url.short }}">{{ request.host }}/{{ url.short }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
